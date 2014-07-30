@@ -87,11 +87,11 @@ var Calendar = function () {
                 },
                                 
                 events: [{
-                        title: 'title',                        
+                        title: 'title event',                        
                         start: new Date(y, m, 1),
                         backgroundColor: Metronic.getBrandColor('yellow')
                     }, {
-                        title: 'Long Event',
+                        title: 'Long Event str',
                         start: new Date(y, m, d - 5),
                         end: new Date(y, m, d - 2),
                         backgroundColor: Metronic.getBrandColor('green')
