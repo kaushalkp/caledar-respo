@@ -8,7 +8,7 @@ var Calendar = function () {
         },
 
         initCalendar: function () {
-
+            
             if (!jQuery().fullCalendar) {
                 return;
             }
@@ -53,6 +53,15 @@ var Calendar = function () {
                     };
                 }
             }
+            
+            function get_aspectratio() {
+            var get_calendar_height= $(window).height() - 30;
+            var get_calendar_width= $(window).width() - 30;
+//            console.log("height"+get_calendar_height);
+//            console.log("width"+get_calendar_width);
+//            console.log(get_calendar_width/get_calendar_height);
+            return (get_calendar_width/get_calendar_height);
+        }
            
 
             //            $('#calendar').fullCalendar('destroy'); // destroy the calendar
@@ -61,6 +70,13 @@ var Calendar = function () {
                 defaultView: 'month', // change default view with available options from http://arshaw.com/fullcalendar/docs/views/Available_Views/ 
                 slotMinutes: 15,
                 editable: true,
+                
+                
+                 aspectRatio: get_aspectratio(),
+                  windowResize: function(view) {
+                     // console.log(view);
+                      $('#calendar').fullCalendar('option', 'aspectRatio',get_aspectratio() );
+                },
                                 
                 events: [{
                         title: 'title',                        
@@ -108,20 +124,23 @@ var Calendar = function () {
                 
                  dayClick: function(date, allDay, jsEvent, view) {
                    if(allDay){
-                       console.log(date);
-                       console.log(view.name);
+//                       console.log(date);
+//                       console.log(view.name);
+                       $(this).css('background-color', 'red');
                        $('#calendar').fullCalendar( 'gotoDate', date );
                        $('#calendar').fullCalendar( 'changeView', 'agendaDay' );
+                        
                         return;
+                        
                     } 
             },
              eventClick: function(calEvent, jsEvent, view) {
                  
                  if(view.name=='month')
                  {
-                     console.log(calEvent);
-                    console.log( jsEvent);
-                    console.log(view);
+//                     console.log(calEvent);
+//                    console.log( jsEvent);
+//                    console.log(view);
                     $('#calendar').fullCalendar( 'gotoDate', calEvent.start );
                        $('#calendar').fullCalendar( 'changeView', 'agendaDay' );
                  }

@@ -8,6 +8,8 @@
         <meta name="format-detection" content="telephone=no" />
         
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" >
         <link rel="stylesheet" type="text/css" href="css/index.css" />
         <meta name="msapplication-tap-highlight" content="no" />
 
@@ -69,7 +71,7 @@
 	<!-- END SIDEBAR -->
 	<!-- BEGIN CONTENT -->
 	<div class="page-content-wrapper">
-		<div class="page-content" style="min-height:1151px">
+		<div class="page-content" >
 			<!-- BEGIN SAMPLE PORTLET CONFIGURATION MODAL FORM-->
 			<div class="modal fade" id="portlet-config" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 				<div class="modal-dialog">
@@ -174,22 +176,28 @@
 <script src="js/calendar.js"></script>
 
 
-<script type="text/javascript" src="cordova.js"></script>
-<script type="text/javascript" src="js/index.js"></script>
+
 <script>
+    
 jQuery(document).ready(function() {       
    // initiate layout and plugins
    Metronic.init(); // init metronic core components
-Layout.init(); // init current layout
-QuickSidebar.init() // init quick sidebar
+    Layout.init(); // init current layout
+//QuickSidebar.init() // init quick sidebar
    Calendar.init();
 });
 </script>
 <!-- END PAGE LEVEL SCRIPTS -->
+<script type="text/javascript" src="js/cordova.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
 
-        <script type="text/javascript">
+<script type="text/javascript">
             app.initialize();
+            pixelRatio = window.devicePixelRatio || 1;
         </script>
+
+
+        
 
 <!-- END BODY -->
 <iframe frameborder="0" scrolling="no" style="border: 0px; display: none; background-color: transparent;"></iframe><div id="GOOGLE_INPUT_CHEXT_FLAG" style="display: none;">
