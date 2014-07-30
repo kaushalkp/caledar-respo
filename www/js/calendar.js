@@ -57,10 +57,16 @@ var Calendar = function () {
             function get_aspectratio() {
             var get_calendar_height= $(window).height() - 30;
             var get_calendar_width= $(window).width() - 30;
+            windowWidth = window.innerWidth;
+            windowHeight = window.innerHeight;
+            $('#heightofpage').val(windowHeight);
+            $('#widthofpage').val(windowWidth);
 //            console.log("height"+get_calendar_height);
 //            console.log("width"+get_calendar_width);
 //            console.log(get_calendar_width/get_calendar_height);
             //return (get_calendar_width/get_calendar_height);
+            
+            $('#ratio').val(windowWidth/windowHeight);
             return (windowWidth/windowHeight);
             //return pixelRatio;
         }

@@ -138,7 +138,10 @@
 <!-- BEGIN FOOTER -->
 <div class="page-footer">
 	<div class="page-footer-inner">
-		
+            <input type="text" id="heightofpage" readonly="">
+            <input type="text" id="widthofpage" readonly="">
+            <input type="text" id="ratio" readonly="">
+            
 	</div>
 	<div class="page-footer-tools">
 		<span class="go-top">
@@ -184,6 +187,8 @@
             
              windowWidth = window.innerWidth;
             windowHeight = window.innerHeight;
+            $('#heightofpage').val(windowHeight);
+            $('#widthofpage').val(windowWidth);
 //            console.log(windowHeight);
 //            console.log(windowWidth);
             var pixelRatio = window.devicePixelRatio || 1; /// get pixel ratio of device
