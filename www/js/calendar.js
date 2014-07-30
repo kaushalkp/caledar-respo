@@ -60,7 +60,9 @@ var Calendar = function () {
 //            console.log("height"+get_calendar_height);
 //            console.log("width"+get_calendar_width);
 //            console.log(get_calendar_width/get_calendar_height);
-            return (get_calendar_width/get_calendar_height);
+            //return (get_calendar_width/get_calendar_height);
+            return (windowWidth/windowHeight);
+            //return pixelRatio;
         }
            
 
